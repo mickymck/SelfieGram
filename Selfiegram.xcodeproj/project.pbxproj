@@ -16,6 +16,8 @@
 		B813D0FE27BD50AB00A32954 /* SelfiegramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813D0FD27BD50AB00A32954 /* SelfiegramTests.swift */; };
 		B813D10827BD50AB00A32954 /* SelfiegramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813D10727BD50AB00A32954 /* SelfiegramUITests.swift */; };
 		B813D10A27BD50AB00A32954 /* SelfiegramUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813D10927BD50AB00A32954 /* SelfiegramUITestsLaunchTests.swift */; };
+		B813D11727BD563100A32954 /* SelfieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813D11627BD563100A32954 /* SelfieStore.swift */; };
+		B813D11927BD5C6200A32954 /* SelfieStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813D11827BD5C6200A32954 /* SelfieStoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B813D10327BD50AB00A32954 /* SelfiegramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelfiegramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B813D10727BD50AB00A32954 /* SelfiegramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfiegramUITests.swift; sourceTree = "<group>"; };
 		B813D10927BD50AB00A32954 /* SelfiegramUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfiegramUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B813D11627BD563100A32954 /* SelfieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieStore.swift; sourceTree = "<group>"; };
+		B813D11827BD5C6200A32954 /* SelfieStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieStoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 				B813D0E827BD50AA00A32954 /* SceneDelegate.swift */,
 				B813D0EA27BD50AA00A32954 /* ViewController.swift */,
 				B813D0EC27BD50AA00A32954 /* Main.storyboard */,
+				B813D11627BD563100A32954 /* SelfieStore.swift */,
 				B813D0EF27BD50AB00A32954 /* Assets.xcassets */,
 				B813D0F127BD50AB00A32954 /* LaunchScreen.storyboard */,
 				B813D0F427BD50AB00A32954 /* Info.plist */,
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				B813D0FD27BD50AB00A32954 /* SelfiegramTests.swift */,
+				B813D11827BD5C6200A32954 /* SelfieStoreTests.swift */,
 			);
 			path = SelfiegramTests;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B813D0EB27BD50AA00A32954 /* ViewController.swift in Sources */,
+				B813D11727BD563100A32954 /* SelfieStore.swift in Sources */,
 				B813D0E727BD50AA00A32954 /* AppDelegate.swift in Sources */,
 				B813D0E927BD50AA00A32954 /* SceneDelegate.swift in Sources */,
 			);
@@ -269,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B813D0FE27BD50AB00A32954 /* SelfiegramTests.swift in Sources */,
+				B813D11927BD5C6200A32954 /* SelfieStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
