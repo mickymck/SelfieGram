@@ -5,7 +5,7 @@ import UIKit.UIImage
 class Selfie: Codable {
     let created: Date
     let id: UUID
-    var title = "Develop Selfie"
+    var title = "Pushing to Remote Selfie"
     var image: UIImage? {
         get {
             return SelfieStore.shared.getImage(id: self.id)
