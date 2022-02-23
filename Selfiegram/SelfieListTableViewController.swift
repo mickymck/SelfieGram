@@ -18,8 +18,6 @@ class SelfieListTableViewController: UITableViewController {
         formatter.maximumUnitCount = 1
         return formatter
     }()
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +60,17 @@ class SelfieListTableViewController: UITableViewController {
         imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let selfie = selfies[indexPath.row]
+                if let controller = segue.destination as? SelfieDetailViewController {
+                    controller.selfie = selfie
+                }
+            }
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -80,6 +89,10 @@ class SelfieListTableViewController: UITableViewController {
         }
         cell.imageView?.image = selfie.image
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showDetail", sender: nil)
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

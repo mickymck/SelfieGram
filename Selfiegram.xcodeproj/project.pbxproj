@@ -18,6 +18,7 @@
 		B813D11727BD563100A32954 /* SelfieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813D11627BD563100A32954 /* SelfieStore.swift */; };
 		B813D11927BD5C6200A32954 /* SelfieStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813D11827BD5C6200A32954 /* SelfieStoreTests.swift */; };
 		B8D1ACE327C681A200352832 /* SelfieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D1ACE227C681A200352832 /* SelfieListTableViewController.swift */; };
+		B8D1ACE727C6DAED00352832 /* SelfieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D1ACE627C6DAED00352832 /* SelfieDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		B813D11627BD563100A32954 /* SelfieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieStore.swift; sourceTree = "<group>"; };
 		B813D11827BD5C6200A32954 /* SelfieStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieStoreTests.swift; sourceTree = "<group>"; };
 		B8D1ACE227C681A200352832 /* SelfieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieListTableViewController.swift; sourceTree = "<group>"; };
+		B8D1ACE627C6DAED00352832 /* SelfieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				B813D0F127BD50AB00A32954 /* LaunchScreen.storyboard */,
 				B813D0F427BD50AB00A32954 /* Info.plist */,
 				B8D1ACE227C681A200352832 /* SelfieListTableViewController.swift */,
+				B8D1ACE627C6DAED00352832 /* SelfieDetailViewController.swift */,
 			);
 			path = Selfiegram;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				B813D11727BD563100A32954 /* SelfieStore.swift in Sources */,
 				B8D1ACE327C681A200352832 /* SelfieListTableViewController.swift in Sources */,
 				B813D0E727BD50AA00A32954 /* AppDelegate.swift in Sources */,
+				B8D1ACE727C6DAED00352832 /* SelfieDetailViewController.swift in Sources */,
 				B813D0E927BD50AA00A32954 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
