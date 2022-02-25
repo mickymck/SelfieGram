@@ -81,15 +81,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Selfie Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qec-YG-2Yj">
-                                <rect key="frame" x="16" y="104" width="382" height="30"/>
+                                <rect key="frame" x="16" y="104" width="307" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="QAp-oy-tHT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="0gP-L5-tzd" eventType="primaryActionTriggered" id="Jcg-vy-1gM"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m40-kG-jAu">
-                                <rect key="frame" x="16" y="142" width="382" height="21"/>
+                                <rect key="frame" x="16" y="142" width="307" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="6RR-mR-BVB"/>
                                 </constraints>
@@ -98,34 +101,53 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionmark.folder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yMs-Ma-1fn">
-                                <rect key="frame" x="16" y="172" width="382" height="672.5"/>
+                                <rect key="frame" x="16" y="180" width="382" height="664.5"/>
                             </imageView>
+                            <mapView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="mutedStandard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="809-Ew-X3N">
+                                <rect key="frame" x="331" y="104" width="67" height="67"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="U9Q-3Y-q8m"/>
+                                    <constraint firstAttribute="width" constant="67" id="cpK-mc-0zM"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1S1-87-7mR" appends="YES" id="ott-Vd-248"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lrt-VR-Zdl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Lrt-VR-Zdl" firstAttribute="trailing" secondItem="yMs-Ma-1fn" secondAttribute="trailing" constant="16" id="2ev-hu-vVW"/>
+                            <constraint firstItem="809-Ew-X3N" firstAttribute="top" secondItem="Lrt-VR-Zdl" secondAttribute="top" constant="16" id="5HS-h1-j2k"/>
                             <constraint firstItem="Lrt-VR-Zdl" firstAttribute="bottom" secondItem="yMs-Ma-1fn" secondAttribute="bottom" constant="16" id="8Fd-Qo-wY4"/>
-                            <constraint firstItem="Lrt-VR-Zdl" firstAttribute="trailing" secondItem="m40-kG-jAu" secondAttribute="trailing" constant="16" id="AP1-gb-d1U"/>
                             <constraint firstItem="qec-YG-2Yj" firstAttribute="top" secondItem="Lrt-VR-Zdl" secondAttribute="top" constant="16" id="AaE-vF-rSd"/>
-                            <constraint firstItem="Lrt-VR-Zdl" firstAttribute="trailing" secondItem="qec-YG-2Yj" secondAttribute="trailing" constant="16" id="YXS-Si-7fD"/>
+                            <constraint firstItem="Lrt-VR-Zdl" firstAttribute="trailing" secondItem="809-Ew-X3N" secondAttribute="trailing" constant="16" id="Fxw-wx-MaG"/>
+                            <constraint firstItem="809-Ew-X3N" firstAttribute="leading" secondItem="qec-YG-2Yj" secondAttribute="trailing" constant="8" id="XzY-Fq-ePg"/>
                             <constraint firstItem="m40-kG-jAu" firstAttribute="top" secondItem="qec-YG-2Yj" secondAttribute="bottom" constant="8" id="cxq-UF-KcW"/>
                             <constraint firstItem="yMs-Ma-1fn" firstAttribute="leading" secondItem="Lrt-VR-Zdl" secondAttribute="leading" constant="16" id="fIm-EZ-k11"/>
+                            <constraint firstItem="yMs-Ma-1fn" firstAttribute="top" secondItem="809-Ew-X3N" secondAttribute="bottom" constant="8" id="i8k-wW-4wd"/>
+                            <constraint firstItem="809-Ew-X3N" firstAttribute="leading" secondItem="m40-kG-jAu" secondAttribute="trailing" constant="8" id="kFL-ae-tlK"/>
                             <constraint firstItem="qec-YG-2Yj" firstAttribute="leading" secondItem="Lrt-VR-Zdl" secondAttribute="leading" constant="16" id="xhR-JT-kEK"/>
                             <constraint firstItem="m40-kG-jAu" firstAttribute="leading" secondItem="Lrt-VR-Zdl" secondAttribute="leading" constant="16" id="xkv-U5-kgQ"/>
-                            <constraint firstItem="yMs-Ma-1fn" firstAttribute="top" secondItem="m40-kG-jAu" secondAttribute="bottom" constant="8" id="yAs-TD-dfI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="T9K-OA-Jna"/>
                     <connections>
                         <outlet property="dateCreatedLabel" destination="m40-kG-jAu" id="XeQ-mm-NPo"/>
+                        <outlet property="mapView" destination="809-Ew-X3N" id="Xb3-Dz-YJm"/>
                         <outlet property="selfieImageView" destination="yMs-Ma-1fn" id="U0x-Ot-2gM"/>
                         <outlet property="selfieNameField" destination="qec-YG-2Yj" id="2sO-xF-6om"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOY-GX-Ahd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1S1-87-7mR">
+                    <connections>
+                        <action selector="expandMap:" destination="0gP-L5-tzd" id="l4B-2d-Y50"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2684" y="96"/>
+            <point key="canvasLocation" x="2682.608695652174" y="95.758928571428569"/>
         </scene>
     </scenes>
     <resources>

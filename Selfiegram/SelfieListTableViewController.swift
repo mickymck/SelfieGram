@@ -1,15 +1,13 @@
-//
-//  SelfieListTableViewController.swift
-//  Selfiegram
-//
-//  Created by Micky McKeon on 2/23/22.
-//
+
 
 import UIKit
+import CoreLocation
 
 class SelfieListTableViewController: UITableViewController {
     
     var selfies: [Selfie] = []
+    var lastLocation: CLLocation?
+    let locationManager = CLLocationManager()
     
     // The formatter for creating the "1 minute ago"-style label
     let timeIntervalFormatter: DateComponentsFormatter = {
@@ -35,6 +33,13 @@ class SelfieListTableViewController: UITableViewController {
         let addSelfieButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(createNewSelfie))
         
         navigationItem.rightBarButtonItem = addSelfieButton
+        
+        self.locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     func showError(message: String) {
@@ -48,6 +53,19 @@ class SelfieListTableViewController: UITableViewController {
     }
     
     @objc func createNewSelfie() {
+        lastLocation = nil
+        
+        switch CLLocationManager.authorizationStatus() {
+        case .denied, .restricted:
+            return
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        default:
+            break
+        }
+        
+        locationManager.requestLocation()
+        
         let imagePicker = UIImagePickerController()
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
@@ -135,6 +153,11 @@ extension SelfieListTableViewController:
     func newSelfieTaken(image: UIImage) {
         let newSelfie = Selfie(title: "New Selfie")
         newSelfie.image = image
+        
+        if let location = self.lastLocation {
+            newSelfie.position = Selfie.Coordinate(location: location)
+        }
+        
         do {
             try SelfieStore.shared.save(selfie: newSelfie)
         } catch let error {
@@ -143,5 +166,14 @@ extension SelfieListTableViewController:
         }
         selfies.insert(newSelfie, at: 0)
         tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+    }
+}
+
+extension SelfieListTableViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.lastLocation = locations.last
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        showError(message: error.localizedDescription)
     }
 }

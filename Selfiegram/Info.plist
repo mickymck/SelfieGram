@@ -6,6 +6,8 @@
 	<string>We use the camera so you can selfie your self!... ie.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>We use the library to store your selfies!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We&apos;ll use your location to add location info to Selfies</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
