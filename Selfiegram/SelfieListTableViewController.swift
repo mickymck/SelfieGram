@@ -55,16 +55,19 @@ class SelfieListTableViewController: UITableViewController {
     @objc func createNewSelfie() {
         lastLocation = nil
         
-        switch CLLocationManager.authorizationStatus() {
-        case .denied, .restricted:
-            return
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-        default:
-            break
-        }
+        let shouldGetLocation = UserDefaults.standard.bool(forKey: SettingsKey.saveLocation.rawValue)
         
-        locationManager.requestLocation()
+        if shouldGetLocation {
+            switch CLLocationManager.authorizationStatus() {
+            case .denied, .restricted:
+                return
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+            default:
+                break
+            }
+            locationManager.requestLocation()
+        }
         
         let imagePicker = UIImagePickerController()
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
