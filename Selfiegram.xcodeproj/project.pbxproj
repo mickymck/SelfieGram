@@ -18,6 +18,18 @@
 		B813D11727BD563100A32954 /* SelfieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813D11627BD563100A32954 /* SelfieStore.swift */; };
 		B813D11927BD5C6200A32954 /* SelfieStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813D11827BD5C6200A32954 /* SelfieStoreTests.swift */; };
 		B826B25227C97A70009DE7B9 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B826B25127C97A70009DE7B9 /* SettingsTableViewController.swift */; };
+		B8A24DD527CD3EDD00E0C5BE /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8A24DD327CD3EDC00E0C5BE /* Quicksand-Bold.otf */; };
+		B8A24DD627CD3EDD00E0C5BE /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8A24DD327CD3EDC00E0C5BE /* Quicksand-Bold.otf */; };
+		B8A24DD727CD3EDD00E0C5BE /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8A24DD327CD3EDC00E0C5BE /* Quicksand-Bold.otf */; };
+		B8A24DD827CD3EDD00E0C5BE /* Quicksand-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8A24DD427CD3EDD00E0C5BE /* Quicksand-Regular.otf */; };
+		B8A24DD927CD3EDD00E0C5BE /* Quicksand-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8A24DD427CD3EDD00E0C5BE /* Quicksand-Regular.otf */; };
+		B8A24DDA27CD3EDD00E0C5BE /* Quicksand-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8A24DD427CD3EDD00E0C5BE /* Quicksand-Regular.otf */; };
+		B8A24DDC27CD3EED00E0C5BE /* Lobster_1.3.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8A24DDB27CD3EED00E0C5BE /* Lobster_1.3.otf */; };
+		B8A24DDD27CD3EED00E0C5BE /* Lobster_1.3.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8A24DDB27CD3EED00E0C5BE /* Lobster_1.3.otf */; };
+		B8A24DDE27CD3EED00E0C5BE /* Lobster_1.3.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8A24DDB27CD3EED00E0C5BE /* Lobster_1.3.otf */; };
+		B8A24DE027CD3F2B00E0C5BE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A24DDF27CD3F2B00E0C5BE /* Theme.swift */; };
+		B8A24DE127CD3F2B00E0C5BE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A24DDF27CD3F2B00E0C5BE /* Theme.swift */; };
+		B8A24DE227CD3F2B00E0C5BE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A24DDF27CD3F2B00E0C5BE /* Theme.swift */; };
 		B8D1ACE327C681A200352832 /* SelfieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D1ACE227C681A200352832 /* SelfieListTableViewController.swift */; };
 		B8D1ACE727C6DAED00352832 /* SelfieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D1ACE627C6DAED00352832 /* SelfieDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +67,10 @@
 		B813D11627BD563100A32954 /* SelfieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieStore.swift; sourceTree = "<group>"; };
 		B813D11827BD5C6200A32954 /* SelfieStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieStoreTests.swift; sourceTree = "<group>"; };
 		B826B25127C97A70009DE7B9 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		B8A24DD327CD3EDC00E0C5BE /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
+		B8A24DD427CD3EDD00E0C5BE /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.otf"; sourceTree = "<group>"; };
+		B8A24DDB27CD3EED00E0C5BE /* Lobster_1.3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster_1.3.otf; sourceTree = "<group>"; };
+		B8A24DDF27CD3F2B00E0C5BE /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Selfiegram/Theme.swift; sourceTree = "<group>"; };
 		B8D1ACE227C681A200352832 /* SelfieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieListTableViewController.swift; sourceTree = "<group>"; };
 		B8D1ACE627C6DAED00352832 /* SelfieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,9 +103,11 @@
 		B813D0DA27BD50AA00A32954 = {
 			isa = PBXGroup;
 			children = (
+				B8A24DDF27CD3F2B00E0C5BE /* Theme.swift */,
 				B813D0E527BD50AA00A32954 /* Selfiegram */,
 				B813D0FC27BD50AB00A32954 /* SelfiegramTests */,
 				B813D10627BD50AB00A32954 /* SelfiegramUITests */,
+				B8A24DD227CD3E9800E0C5BE /* fonts */,
 				B813D0E427BD50AA00A32954 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -137,6 +155,16 @@
 				B813D10927BD50AB00A32954 /* SelfiegramUITestsLaunchTests.swift */,
 			);
 			path = SelfiegramUITests;
+			sourceTree = "<group>";
+		};
+		B8A24DD227CD3E9800E0C5BE /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B8A24DDB27CD3EED00E0C5BE /* Lobster_1.3.otf */,
+				B8A24DD327CD3EDC00E0C5BE /* Quicksand-Bold.otf */,
+				B8A24DD427CD3EDD00E0C5BE /* Quicksand-Regular.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +273,10 @@
 			files = (
 				B813D0F327BD50AB00A32954 /* LaunchScreen.storyboard in Resources */,
 				B813D0F027BD50AB00A32954 /* Assets.xcassets in Resources */,
+				B8A24DDC27CD3EED00E0C5BE /* Lobster_1.3.otf in Resources */,
+				B8A24DD527CD3EDD00E0C5BE /* Quicksand-Bold.otf in Resources */,
 				B813D0EE27BD50AA00A32954 /* Main.storyboard in Resources */,
+				B8A24DD827CD3EDD00E0C5BE /* Quicksand-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +284,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A24DD927CD3EDD00E0C5BE /* Quicksand-Regular.otf in Resources */,
+				B8A24DD627CD3EDD00E0C5BE /* Quicksand-Bold.otf in Resources */,
+				B8A24DDD27CD3EED00E0C5BE /* Lobster_1.3.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +294,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A24DDA27CD3EDD00E0C5BE /* Quicksand-Regular.otf in Resources */,
+				B8A24DD727CD3EDD00E0C5BE /* Quicksand-Bold.otf in Resources */,
+				B8A24DDE27CD3EED00E0C5BE /* Lobster_1.3.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +313,7 @@
 				B813D0E727BD50AA00A32954 /* AppDelegate.swift in Sources */,
 				B8D1ACE727C6DAED00352832 /* SelfieDetailViewController.swift in Sources */,
 				B813D0E927BD50AA00A32954 /* SceneDelegate.swift in Sources */,
+				B8A24DE027CD3F2B00E0C5BE /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A24DE127CD3F2B00E0C5BE /* Theme.swift in Sources */,
 				B813D0FE27BD50AB00A32954 /* SelfiegramTests.swift in Sources */,
 				B813D11927BD5C6200A32954 /* SelfieStoreTests.swift in Sources */,
 			);
@@ -292,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A24DE227CD3F2B00E0C5BE /* Theme.swift in Sources */,
 				B813D10827BD50AB00A32954 /* SelfiegramUITests.swift in Sources */,
 				B813D10A27BD50AB00A32954 /* SelfiegramUITestsLaunchTests.swift in Sources */,
 			);

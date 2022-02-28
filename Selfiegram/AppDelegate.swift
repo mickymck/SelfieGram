@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  Selfiegram
-//
-//  Created by Micky McKeon on 2/16/22.
-//
 
 import UIKit
 
@@ -13,7 +7,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        Theme.apply()
+        
         return true
     }
 
