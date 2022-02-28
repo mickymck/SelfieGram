@@ -144,7 +144,13 @@
                             <constraint firstItem="m40-kG-jAu" firstAttribute="leading" secondItem="Lrt-VR-Zdl" secondAttribute="leading" constant="16" id="xkv-U5-kgQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="T9K-OA-Jna"/>
+                    <navigationItem key="navigationItem" id="T9K-OA-Jna">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="2ve-dH-Unm">
+                            <connections>
+                                <action selector="sharedSelfie:" destination="0gP-L5-tzd" id="duI-h8-iiN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateCreatedLabel" destination="m40-kG-jAu" id="XeQ-mm-NPo"/>
                         <outlet property="mapView" destination="809-Ew-X3N" id="Xb3-Dz-YJm"/>

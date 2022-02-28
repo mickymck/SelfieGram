@@ -120,19 +120,28 @@ class SelfieListTableViewController: UITableViewController {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        // If this is a deletion, delete the Selfie
-        if editingStyle == .delete {
-            let selfieToRemove = selfies[indexPath.row]
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let share = UITableViewRowAction(style: .normal, title: "Share") { action, indexPath in
+            guard let image = self.selfies[indexPath.row].image else {
+                self.showError(message: "Unable to share selfie without an image")
+                return
+            }
+            let activity = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+            self.present(activity, animated: true, completion: nil)
+        }
+        share.backgroundColor = self.view.tintColor
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, indexPath in
+            let selfieToRemove = self.selfies[indexPath.row]
             do {
                 try SelfieStore.shared.delete(selfie: selfieToRemove)
-                selfies.remove(at: indexPath.row)
+                self.selfies.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } catch {
-                let title = selfieToRemove.title
-                showError(message: "Failed to delete \(title)")
+                self.showError(message: "Failed to delete \(selfieToRemove.title)")
             }
         }
+        return [delete,share]
     }
 }
 

@@ -65,4 +65,24 @@ class SelfieDetailViewController: UIViewController {
             item.openInMaps(launchOptions: options)
         }
     }
+    
+    @IBAction func sharedSelfie(_ sender: UIBarButtonItem) {
+        guard let image = self.selfie?.image else {
+            
+            let alert = UIAlertController(title: "Error", message: "Unable to share selfie without an image", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true)
+            
+            return
+        }
+        
+        let activity = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        
+        self.present(activity, animated: true, completion: nil)
+    }
+    
 }
