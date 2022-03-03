@@ -2,6 +2,7 @@
 
 import UIKit
 import CoreLocation
+import simd
 
 class SelfieListTableViewController: UITableViewController {
     
@@ -52,6 +53,24 @@ class SelfieListTableViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func newSelfieTaken(image: UIImage) {
+        let newSelfie = Selfie(title: "New Selfie")
+        newSelfie.image = image
+        
+        if let location = self.lastLocation {
+            newSelfie.position = Selfie.Coordinate(location: location)
+        }
+        
+        do {
+            try SelfieStore.shared.save(selfie: newSelfie)
+        } catch let error {
+            showError(message: "Can't save photo: \(error)")
+            return
+        }
+        selfies.insert(newSelfie, at: 0)
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+    }
+    
     @objc func createNewSelfie() {
         lastLocation = nil
         
@@ -69,17 +88,20 @@ class SelfieListTableViewController: UITableViewController {
             locationManager.requestLocation()
         }
         
-        let imagePicker = UIImagePickerController()
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker.sourceType = .camera
-            if UIImagePickerController.isCameraDeviceAvailable(.front) {
-                imagePicker.cameraDevice = .front
+        guard let navigation = self.storyboard?
+                .instantiateViewController(withIdentifier: "CaptureScene") as? UINavigationController,
+              let capture = navigation.viewControllers.first as? CaptureViewController
+        else { fatalError("Failed to create capture view controller") }
+        
+        capture.completion = { (image: UIImage?) in
+            if let image = image {
+                self.newSelfieTaken(image: image)
             }
-        } else {
-            imagePicker.sourceType = .photoLibrary
+            self.dismiss(animated: true, completion: nil)
         }
-        imagePicker.delegate = self
-        self.present(imagePicker, animated: true, completion: nil)
+        
+        self.present(navigation, animated: true, completion: nil)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -142,42 +164,6 @@ class SelfieListTableViewController: UITableViewController {
             }
         }
         return [delete,share]
-    }
-}
-
-extension SelfieListTableViewController:
-    UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage ?? info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            let message = "Couldn't get an image from the image picker"
-            showError(message: message)
-            return
-        }
-        self.newSelfieTaken(image: image)
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func newSelfieTaken(image: UIImage) {
-        let newSelfie = Selfie(title: "New Selfie")
-        newSelfie.image = image
-        
-        if let location = self.lastLocation {
-            newSelfie.position = Selfie.Coordinate(location: location)
-        }
-        
-        do {
-            try SelfieStore.shared.save(selfie: newSelfie)
-        } catch let error {
-            showError(message: "Can't save photo: \(error)")
-            return
-        }
-        selfies.insert(newSelfie, at: 0)
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
     }
 }
 
