@@ -62,6 +62,10 @@ class EditingViewController: UIViewController {
         let addSelfieButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
         
         navigationItem.rightBarButtonItem = addSelfieButton
+        
+        self.detectEyebrows(image: image) { eyebrows in
+            self.eyebrows = eyebrows
+        }
     }
     
     @objc func done() {
@@ -105,6 +109,74 @@ class EditingViewController: UIViewController {
         self.renderedImage = UIGraphicsGetImageFromCurrentImageContext()
         
         self.imageView.image = self.renderedImage
+    }
+    
+    private func locateEyebrowsHandler(_ request: VNRequest, imageSize: CGSize, completion: DetectionCompletion) {
+        guard let firstFace = request.results?.first as? VNFaceObservation else {
+            completion(.error(DetectionError.noResults))
+            return
+        }
+        
+        func averagePosition(for landmark: VNFaceLandmarkRegion2D) -> CGPoint {
+            
+            let points = landmark.pointsInImage(imageSize: imageSize)
+            
+            var averagePoint = points.reduce(CGPoint.zero) {
+                return CGPoint(x: $0.x + $1.x, y: $0.y + $1.y)
+            }
+            
+            averagePoint.x /= CGFloat(points.count)
+            averagePoint.y /= CGFloat(points.count)
+            
+            return averagePoint
+        }
+        
+        var results: [EyebrowPosition] = []
+        
+        if let leftEyebrow = firstFace.landmarks?.leftEyebrow {
+            let position = averagePosition(for: leftEyebrow)
+            results.append( (type: .left, position: position) )
+        }
+        
+        if let rightEyebrow = firstFace.landmarks?.rightEyebrow {
+            let position = averagePosition(for: rightEyebrow)
+            results.append( (type: .right, position: position) )
+        }
+        
+        completion(.success(results))
+    }
+    
+    func detectFaceLandmarks(image: UIImage, completion: @escaping DetectionCompletion) {
+        
+        let request = VNDetectFaceLandmarksRequest { [unowned self] request, error in
+            
+            if let error = error {
+                completion(.error(error))
+                return
+            }
+            
+            self.locateEyebrowsHandler(request, imageSize: image.size, completion: completion)
+        }
+        
+        let handler = VNImageRequestHandler(cgImage: image.cgImage!, orientation: .leftMirrored, options: [:])
+        
+        do {
+            try handler.perform([request])
+        } catch {
+            completion(.error(error))
+        }
+    }
+    
+    func detectEyebrows(image: UIImage, completion: @escaping ([EyebrowPosition]) -> Void) {
+        detectFaceLandmarks(image: image) { result in
+            switch result {
+            case .error(let error):
+                NSLog("Error detecting eyebrows: \(error)")
+                completion([])
+            case .success(let results):
+                completion(results)
+            }
+        }
     }
 }
 

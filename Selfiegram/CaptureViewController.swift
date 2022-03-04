@@ -65,6 +65,16 @@ class CaptureViewController: UIViewController {
         self.cameraPreview?.setCameraOrientation(currentVideoOrientation)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !self.captureSession.isRunning {
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.captureSession.startRunning()
+            }
+        }
+    }
+    
     @IBAction func close(_ sender: UIBarButtonItem) {
         self.completion?(nil)
     }
@@ -123,6 +133,19 @@ extension CaptureViewController: AVCapturePhotoCaptureDelegate {
                   NSLog("Failed to get image from encoded data")
                   return
               }
-        self.completion?(image)
+        self.captureSession.stopRunning()
+        self.performSegue(withIdentifier: "showEditing", sender: image)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? EditingViewController else {
+            fatalError("The destination VC is not configured correctly")
+        }
+        guard let image = sender as? UIImage else {
+            fatalError("Expected to receive an image")
+        }
+        
+        destination.image = image
+        destination.completion = self.completion
     }
 }
