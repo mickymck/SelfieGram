@@ -28,8 +28,10 @@
 		B8A24DDD27CD3EED00E0C5BE /* Lobster_1.3.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8A24DDB27CD3EED00E0C5BE /* Lobster_1.3.otf */; };
 		B8A24DDE27CD3EED00E0C5BE /* Lobster_1.3.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8A24DDB27CD3EED00E0C5BE /* Lobster_1.3.otf */; };
 		B8A24DE027CD3F2B00E0C5BE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A24DDF27CD3F2B00E0C5BE /* Theme.swift */; };
-		B8A24DE127CD3F2B00E0C5BE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A24DDF27CD3F2B00E0C5BE /* Theme.swift */; };
-		B8A24DE227CD3F2B00E0C5BE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A24DDF27CD3F2B00E0C5BE /* Theme.swift */; };
+		B8A24DE427CD6EA700E0C5BE /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A24DE327CD6EA700E0C5BE /* CaptureViewController.swift */; };
+		B8C83CF227D114E80034C876 /* OverlayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C83CF127D114E80034C876 /* OverlayStore.swift */; };
+		B8C83CF427D1281F0034C876 /* DataLoadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C83CF327D1281F0034C876 /* DataLoadingTests.swift */; };
+		B8C83CF627D14CAD0034C876 /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C83CF527D14CAD0034C876 /* EditingViewController.swift */; };
 		B8D1ACE327C681A200352832 /* SelfieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D1ACE227C681A200352832 /* SelfieListTableViewController.swift */; };
 		B8D1ACE727C6DAED00352832 /* SelfieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D1ACE627C6DAED00352832 /* SelfieDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -70,7 +72,11 @@
 		B8A24DD327CD3EDC00E0C5BE /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
 		B8A24DD427CD3EDD00E0C5BE /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.otf"; sourceTree = "<group>"; };
 		B8A24DDB27CD3EED00E0C5BE /* Lobster_1.3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster_1.3.otf; sourceTree = "<group>"; };
-		B8A24DDF27CD3F2B00E0C5BE /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Selfiegram/Theme.swift; sourceTree = "<group>"; };
+		B8A24DDF27CD3F2B00E0C5BE /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B8A24DE327CD6EA700E0C5BE /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		B8C83CF127D114E80034C876 /* OverlayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayStore.swift; sourceTree = "<group>"; };
+		B8C83CF327D1281F0034C876 /* DataLoadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingTests.swift; sourceTree = "<group>"; };
+		B8C83CF527D14CAD0034C876 /* EditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
 		B8D1ACE227C681A200352832 /* SelfieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieListTableViewController.swift; sourceTree = "<group>"; };
 		B8D1ACE627C6DAED00352832 /* SelfieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,7 +109,6 @@
 		B813D0DA27BD50AA00A32954 = {
 			isa = PBXGroup;
 			children = (
-				B8A24DDF27CD3F2B00E0C5BE /* Theme.swift */,
 				B813D0E527BD50AA00A32954 /* Selfiegram */,
 				B813D0FC27BD50AB00A32954 /* SelfiegramTests */,
 				B813D10627BD50AB00A32954 /* SelfiegramUITests */,
@@ -135,6 +140,10 @@
 				B8D1ACE227C681A200352832 /* SelfieListTableViewController.swift */,
 				B8D1ACE627C6DAED00352832 /* SelfieDetailViewController.swift */,
 				B826B25127C97A70009DE7B9 /* SettingsTableViewController.swift */,
+				B8A24DDF27CD3F2B00E0C5BE /* Theme.swift */,
+				B8A24DE327CD6EA700E0C5BE /* CaptureViewController.swift */,
+				B8C83CF127D114E80034C876 /* OverlayStore.swift */,
+				B8C83CF527D14CAD0034C876 /* EditingViewController.swift */,
 			);
 			path = Selfiegram;
 			sourceTree = "<group>";
@@ -144,6 +153,7 @@
 			children = (
 				B813D0FD27BD50AB00A32954 /* SelfiegramTests.swift */,
 				B813D11827BD5C6200A32954 /* SelfieStoreTests.swift */,
+				B8C83CF327D1281F0034C876 /* DataLoadingTests.swift */,
 			);
 			path = SelfiegramTests;
 			sourceTree = "<group>";
@@ -308,10 +318,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B813D11727BD563100A32954 /* SelfieStore.swift in Sources */,
+				B8A24DE427CD6EA700E0C5BE /* CaptureViewController.swift in Sources */,
 				B8D1ACE327C681A200352832 /* SelfieListTableViewController.swift in Sources */,
+				B8C83CF627D14CAD0034C876 /* EditingViewController.swift in Sources */,
 				B826B25227C97A70009DE7B9 /* SettingsTableViewController.swift in Sources */,
 				B813D0E727BD50AA00A32954 /* AppDelegate.swift in Sources */,
 				B8D1ACE727C6DAED00352832 /* SelfieDetailViewController.swift in Sources */,
+				B8C83CF227D114E80034C876 /* OverlayStore.swift in Sources */,
 				B813D0E927BD50AA00A32954 /* SceneDelegate.swift in Sources */,
 				B8A24DE027CD3F2B00E0C5BE /* Theme.swift in Sources */,
 			);
@@ -321,7 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8A24DE127CD3F2B00E0C5BE /* Theme.swift in Sources */,
+				B8C83CF427D1281F0034C876 /* DataLoadingTests.swift in Sources */,
 				B813D0FE27BD50AB00A32954 /* SelfiegramTests.swift in Sources */,
 				B813D11927BD5C6200A32954 /* SelfieStoreTests.swift in Sources */,
 			);
@@ -331,7 +344,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8A24DE227CD3F2B00E0C5BE /* Theme.swift in Sources */,
 				B813D10827BD50AB00A32954 /* SelfiegramUITests.swift in Sources */,
 				B813D10A27BD50AB00A32954 /* SelfiegramUITestsLaunchTests.swift in Sources */,
 			);
@@ -423,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -478,7 +490,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -498,6 +510,9 @@
 				DEVELOPMENT_TEAM = 4BVWWWGR39;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Selfiegram/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera so you can selfie your self!... ie.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We'll use your location to add location info to Selfies";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We use the library to store your selfies!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -526,6 +541,9 @@
 				DEVELOPMENT_TEAM = 4BVWWWGR39;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Selfiegram/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We use the camera so you can selfie your self!... ie.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We'll use your location to add location info to Selfies";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We use the library to store your selfies!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

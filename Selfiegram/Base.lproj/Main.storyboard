@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VxB-3J-cck">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VxB-3J-cck">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,6 +17,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ctf-8A-NUQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="AccentColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Exx-Fv-wnS" kind="relationship" relationship="rootViewController" id="Kft-L9-7pr"/>
@@ -83,6 +88,147 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scD-zi-NXC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1815.9420289855075" y="95.758928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vNC-MN-0Cl">
+            <objects>
+                <navigationController storyboardIdentifier="CaptureScene" id="34v-BC-6Yn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e8g-sh-JD2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Wtq-dH-u1l" kind="relationship" relationship="rootViewController" id="sCs-0f-h4O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TMp-Cz-NMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1816" y="-602"/>
+        </scene>
+        <!--Selfie-->
+        <scene sceneID="PrC-a4-H7j">
+            <objects>
+                <viewController id="Wtq-dH-u1l" customClass="CaptureViewController" customModule="Selfiegram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wmG-87-VLs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFJ-LJ-zg0" customClass="PreviewView" customModule="Selfiegram" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8b-cj-P0W">
+                                <rect key="frame" x="0.0" y="822" width="414" height="40"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ae4-Va-hZe">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to take a selfie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t7-6V-7rT">
+                                            <rect key="frame" x="136" y="9.5" width="142" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4t7-6V-7rT" firstAttribute="centerX" secondItem="ae4-Va-hZe" secondAttribute="centerX" id="4Rw-XG-g8A"/>
+                                        <constraint firstItem="4t7-6V-7rT" firstAttribute="centerY" secondItem="ae4-Va-hZe" secondAttribute="centerY" id="hNR-Q9-lYc"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mSz-pk-IT1"/>
+                                </constraints>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Yw-Y6-Mnf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="c8b-cj-P0W" secondAttribute="trailing" id="G2H-rh-e0B"/>
+                            <constraint firstItem="3Yw-Y6-Mnf" firstAttribute="bottom" secondItem="c8b-cj-P0W" secondAttribute="bottom" id="JaN-KR-XuS"/>
+                            <constraint firstItem="3Yw-Y6-Mnf" firstAttribute="trailing" secondItem="gFJ-LJ-zg0" secondAttribute="trailing" id="Oyg-tj-MV0"/>
+                            <constraint firstItem="gFJ-LJ-zg0" firstAttribute="top" secondItem="3Yw-Y6-Mnf" secondAttribute="top" id="XPu-R4-6G8"/>
+                            <constraint firstItem="c8b-cj-P0W" firstAttribute="leading" secondItem="3Yw-Y6-Mnf" secondAttribute="leading" id="ZNd-XO-AAo"/>
+                            <constraint firstItem="3Yw-Y6-Mnf" firstAttribute="bottom" secondItem="gFJ-LJ-zg0" secondAttribute="bottom" id="g0U-A2-24I"/>
+                            <constraint firstItem="gFJ-LJ-zg0" firstAttribute="leading" secondItem="3Yw-Y6-Mnf" secondAttribute="leading" id="pI4-DZ-6oq"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="STH-Up-L1R" appends="YES" id="vOG-rd-iSS"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Selfie" id="c2q-rF-sUe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gf4-IB-wv7">
+                            <connections>
+                                <action selector="close:" destination="Wtq-dH-u1l" id="NZn-dr-eGd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cameraPreview" destination="gFJ-LJ-zg0" id="i2e-Hc-HPz"/>
+                        <segue destination="3se-F9-A0D" kind="show" identifier="showEditing" id="qKe-3G-FZL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BF0-Li-IeW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="STH-Up-L1R">
+                    <connections>
+                        <action selector="takeSelfie:" destination="Wtq-dH-u1l" id="wTl-xb-wnv"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2682.608695652174" y="-602.00892857142856"/>
+        </scene>
+        <!--Edit-->
+        <scene sceneID="1m4-A5-uuS">
+            <objects>
+                <viewController title="Edit" id="3se-F9-A0D" customClass="EditingViewController" customModule="Selfiegram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tJY-11-v57">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3BF-Mu-cJP">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kvu-3h-XYY">
+                                <rect key="frame" x="0.0" y="734" width="414" height="128"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="128" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QNS-yG-qTr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="QNS-yG-qTr" firstAttribute="bottom" secondItem="sGO-kL-mIf" secondAttribute="bottom" id="H8D-9U-JKe"/>
+                                    <constraint firstAttribute="height" constant="128" id="KSM-h4-Eq5"/>
+                                    <constraint firstItem="QNS-yG-qTr" firstAttribute="height" secondItem="Kvu-3h-XYY" secondAttribute="height" id="QhT-Ak-dlW"/>
+                                    <constraint firstItem="QNS-yG-qTr" firstAttribute="top" secondItem="sGO-kL-mIf" secondAttribute="top" id="Uxs-If-FCZ"/>
+                                    <constraint firstItem="QNS-yG-qTr" firstAttribute="trailing" secondItem="sGO-kL-mIf" secondAttribute="trailing" id="b8b-3B-Znp"/>
+                                    <constraint firstItem="QNS-yG-qTr" firstAttribute="leading" secondItem="sGO-kL-mIf" secondAttribute="leading" id="n4c-nY-h59"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="pBM-eO-CQS"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="sGO-kL-mIf"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NKy-BP-2T5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kvu-3h-XYY" firstAttribute="bottom" secondItem="NKy-BP-2T5" secondAttribute="bottom" id="3a1-2S-9jr"/>
+                            <constraint firstItem="Kvu-3h-XYY" firstAttribute="trailing" secondItem="NKy-BP-2T5" secondAttribute="trailing" id="GFo-Z0-VYM"/>
+                            <constraint firstItem="NKy-BP-2T5" firstAttribute="bottom" secondItem="3BF-Mu-cJP" secondAttribute="bottom" id="QhC-ua-MGz"/>
+                            <constraint firstItem="Kvu-3h-XYY" firstAttribute="leading" secondItem="NKy-BP-2T5" secondAttribute="leading" id="akd-oc-eUd"/>
+                            <constraint firstItem="NKy-BP-2T5" firstAttribute="trailing" secondItem="3BF-Mu-cJP" secondAttribute="trailing" id="eMi-CN-iR4"/>
+                            <constraint firstItem="3BF-Mu-cJP" firstAttribute="top" secondItem="NKy-BP-2T5" secondAttribute="top" id="gtS-bH-OcG"/>
+                            <constraint firstItem="3BF-Mu-cJP" firstAttribute="leading" secondItem="NKy-BP-2T5" secondAttribute="leading" id="x9f-cc-hoy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lhj-ue-ZaZ"/>
+                    <connections>
+                        <outlet property="imageView" destination="3BF-Mu-cJP" id="KSy-Br-0a6"/>
+                        <outlet property="optionsStackView" destination="QNS-yG-qTr" id="SrU-31-6sk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wdd-Ux-9CA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3547.826086956522" y="-602.00892857142856"/>
         </scene>
         <!--Selfie Detail View Controller-->
         <scene sceneID="KYf-wU-I7h">
@@ -259,6 +405,9 @@
     </scenes>
     <resources>
         <image name="questionmark.folder" catalog="system" width="128" height="97"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.32899999618530273" blue="0.57499998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
