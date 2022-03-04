@@ -54,7 +54,8 @@ class SelfieListTableViewController: UITableViewController {
     }
     
     func newSelfieTaken(image: UIImage) {
-        let newSelfie = Selfie(title: "New Selfie")
+        let selfieTitle = NSLocalizedString("New Selfie", comment: "default name for a newly created selfie")
+        let newSelfie = Selfie(title: selfieTitle)
         newSelfie.image = image
         
         if let location = self.lastLocation {
