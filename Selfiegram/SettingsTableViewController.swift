@@ -24,7 +24,7 @@ class SettingsTableViewController: UITableViewController {
         current.removeAllPendingNotificationRequests()
         
         let content = UNMutableNotificationContent()
-        content.title = "Take your selfie now! NOW."
+        content.title = NSString.localizedUserNotificationString(forKey: "Take your selfie now. NOW.", arguments: nil)
         
         var components = DateComponents()
         components.setValue(10, for: Calendar.Component.hour)
