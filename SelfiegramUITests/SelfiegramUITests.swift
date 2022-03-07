@@ -1,9 +1,4 @@
-//
-//  SelfiegramUITests.swift
-//  SelfiegramUITests
-//
-//  Created by Micky McKeon on 2/16/22.
-//
+
 
 import XCTest
 
@@ -22,13 +17,41 @@ class SelfiegramUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testExample() {
+        
+        XCUIApplication().activate()
+        
         let app = XCUIApplication()
+        let currentSelfieCount = app.tables.element(boundBy: 0).cells.count
+        
+        app.terminate()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let tables = app.tables.element(boundBy: 0)
+        
+        XCTAssertEqual(currentSelfieCount, tables.cells.count)
+    }
+    
+    func testPhotos() {
+        
+        addUIInterruptionMonitor(withDescription: "Camera Permission Dialog") { alert -> Bool in
+            alert.buttons["OK"].tap()
+            return true
+        }
+        
+        XCUIApplication().activate()
+        
+        let app = XCUIApplication()
+        
+        let currentSelfieCount = app.tables.element(boundBy: 0).cells.count
+        
+        app.navigationBars["Selfies"].buttons["Add"].tap()
+        app.windows.children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element(boundBy: 0).tap()
+        app.navigationBars["Selfiegram.EditingView"].buttons["Done"].tap()
+        
+        let tables = app.tables.element(boundBy: 0)
+        
+        XCTAssertEqual(currentSelfieCount, tables.cells.count + 1)
     }
 
     func testLaunchPerformance() throws {
